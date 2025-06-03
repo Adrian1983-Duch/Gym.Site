@@ -1,0 +1,509 @@
+@use './mixin' as m;
+@use './colors' as c;
+@use './components' as com;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
+	font-style: normal;
+	background-color: #fffcf0;
+}
+
+//SHADOW//
+
+.hero-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: -1;
+}
+
+.border-shadow {
+	border: 3px solid rgb(0, 86, 210);
+	border-radius: 20px;
+	box-shadow: 0px 0px 10px 0px rgb(0, 86, 210);
+}
+//BORDERS
+.bordered {
+	padding: 5px;
+	border: 3px solid #32b2ff;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px 0px rgb(50, 178, 255);
+}
+.bordered-bottom {
+	border-bottom: 5px solid #32b2ff;
+}
+
+// navigation //
+
+nav {
+	font-size: 2rem;
+	text-transform: uppercase;
+
+	.navbar-brand {
+		font-size: 2.4rem;
+		font-weight: bold;
+		text-transform: none;
+	}
+
+	.navbar-link {
+		transition: 0.3s;
+		color: #fff;
+		&:hover {
+			color: c.$blue;
+		}
+	}
+}
+
+// header //
+.hero-img {
+	.carousel-item {
+		position: relative;
+		height: 100vh;
+		font-size: 2rem;
+		background-position: center;
+		background-size: cover;
+		z-index: 0;
+
+		li {
+			list-style: none;
+		}
+	}
+
+	.carousel-img-one {
+		background-image: url(../img/ai-generated-8706774_1920.jpg);
+	}
+	.carousel-img-two {
+		background-image: url(../img/ai-generated-8800694_1920.png);
+	}
+	.carousel-img-three {
+		background-image: url(../img/adult-1850925_1920.jpg);
+	}
+}
+
+//team//
+.team {
+	&-description {
+		font-size: 1.5rem;
+	}
+
+	&-img {
+		display: inline-block;
+		transition: transform 0.3s;
+		&:hover {
+			transform: scale(0.9);
+		}
+	}
+
+	&-text {
+		font-size: 1.5rem;
+		color: #0056d2;
+	}
+
+	&-icon {
+		font-size: 8rem;
+	}
+}
+
+//  zones
+.zones {
+	&-title {
+		font-family: 'Bebas Neue', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 4rem;
+		color: rgb(0, 86, 210);
+	}
+
+	&-border {
+		border: 1px solid #000;
+		border-radius: 30px;
+	}
+}
+
+// price //
+
+.price {
+	color: #fff;
+
+	&-card {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 15px;
+		justify-content: center;
+
+		&-next {
+			display: grid;
+			grid-template-columns: repeat(100px, 1fr);
+			gap: 15px;
+			justify-content: center;
+		}
+	}
+	&_card-icon {
+		color: c.$blue;
+
+		font-size: 4rem;
+	}
+	&_card-money {
+		color: c.$blue;
+		font-size: 4rem;
+	}
+	&_card-text {
+		font-size: 1.6rem;
+	}
+
+	.card {
+		background-image: linear-gradient(
+			133.84deg,
+			#4e4e4e -16.04%,
+			#333333 9.33%,
+			#1a1a1a 32.02%,
+			#1a1a1a 62.06%,
+			#262626 87.42%,
+			#4e4e4e 112.12%
+		);
+
+		border-radius: 20px;
+	}
+}
+
+//PARTNERS
+.partners {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 8px;
+	justify-content: center;
+
+	&-img {
+		padding: 0.2em;
+		border: 1px solid #000;
+	}
+}
+
+.heading-text {
+	font-size: 3rem;
+}
+
+.text-title {
+	font-family: 'Bebas Neue', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 4rem;
+	color: rgb(0, 86, 210);
+}
+
+.gym-rules {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	position: relative;
+	height: 300px;
+	background-image: url(../img/crossfit-regulamin.jpg);
+	background-size: cover;
+	background-position: bottom;
+	z-index: 10;
+	@include m.kenburns-top;
+}
+
+.gym-title {
+	font-size: 2.3rem;
+}
+
+.bi-facebook {
+	display: inline-block;
+	padding: 5px;
+	font-size: 5rem;
+	transition: 0.3s;
+	&:hover {
+		transform: scale(0.9);
+	}
+}
+
+.bi-instagram {
+	display: inline-block;
+	margin: 0;
+	font-size: 4.5rem;
+	color: rgb(193 53 132);
+	transition: 0.3s;
+	&:hover {
+		transform: scale(0.9);
+	}
+}
+
+.info {
+	background-color: #fffcf0;
+}
+
+// CONTACT
+.contact {
+	&-footer {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		justify-content: center;
+		align-items: center;
+	}
+
+	&-copywrite {
+		margin-bottom: 0;
+		color: orange;
+	}
+	&-items {
+		transition: 0.3s;
+		color: #fff;
+		&:hover {
+			color: c.$blue;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.card-header {
+		font-size: 2.2rem;
+	}
+
+	.price-card {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 15px;
+		justify-content: center;
+	}
+
+	.learn {
+		display: block;
+	}
+
+	.weight {
+		display: block;
+		font-size: 0.5rem;
+	}
+
+	.team {
+		&-description {
+			font-size: 1.5rem;
+		}
+	}
+
+	.display-4 {
+		font-size: 2.7rem;
+	}
+	.partners {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 15px;
+		justify-content: center;
+	}
+
+	.contact-footer {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+@media (min-width: 768px) {
+	.price_card-text {
+		font-size: 1.5rem;
+	}
+	.price_card-icon {
+		font-size: 5rem;
+	}
+	.price_card-money {
+		font-size: 4rem;
+	}
+	.price-card-next {
+		display: grid;
+		grid-template-columns: 25% 75%;
+		gap: 15px;
+		justify-content: center;
+	}
+	.price-card {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 15px;
+		justify-content: center;
+	}
+	.display-4 {
+		font-size: 4rem;
+	}
+
+	.card-header {
+		font-size: 1rem;
+	}
+
+	.team {
+		&-description {
+			font-size: 2rem;
+		}
+
+		&-text {
+			font-size: 3.5rem;
+		}
+	}
+	.partners {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 15px;
+		justify-content: center;
+	}
+	.contact-footer {
+		display: grid;
+		grid-template-columns: 50% 40% 10%;
+		align-items: center;
+	}
+	.text-title {
+		font-size: 4.6rem;
+	}
+
+	.gym-title {
+		font-size: 5rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.display-4 {
+		font-size: 2.5rem;
+	}
+
+	.money {
+		font-size: 5rem;
+	}
+
+	.card-header {
+		font-size: 3rem;
+	}
+
+	.team {
+		&-description {
+			font-size: 2rem;
+		}
+	}
+
+	.zones {
+		margin-top: 30px;
+	}
+	.zones-items {
+		font-size: 1.5rem;
+	}
+
+	.partners {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 15px;
+		justify-content: center;
+	}
+	.contact-footer {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+
+	.text-title {
+		font-size: 5rem;
+	}
+}
+@media (min-width: 1200px) {
+	.zones-items {
+		font-size: 2rem;
+	}
+	.money {
+		font-size: 5rem;
+	}
+}
+
+@media (min-width: 1400px) {
+	section {
+		padding-top: 80px;
+	}
+	.price_card-text {
+		font-size: 2.8rem;
+	}
+	.price_card-icon {
+		font-size: 12rem;
+	}
+	.price_card-money {
+		font-size: 6rem;
+	}
+	.price-card {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 15px;
+		justify-content: center;
+	}
+	.carousel-item {
+		height: 100vh;
+	}
+	.carousel-img-one {
+		background-image: url(../img/strefa-ciężarów.webp);
+	}
+	.carousel-img-two {
+		background-image: url(../img/strefa-cardio.webp);
+	}
+	.carousel-img-three {
+		background-image: url(../img/trening-nóg.webp);
+	}
+	.mobile-img-one {
+		background-image: url(../img/ai-generated-8706774_1920.jpg);
+	}
+	.mobile-img-two {
+		background-image: url(../img/strefa_cardio-small.png);
+	}
+	.mobile-img-three {
+		background-image: url(../img/ai-generated-8800694_1920.png);
+	}
+
+	.display-4 {
+		font-size: 4rem;
+	}
+
+	.zones-items {
+		font-size: 2rem;
+	}
+
+	.zones {
+		margin-top: 50px;
+	}
+
+	.zones-title {
+		font-size: 6rem;
+	}
+
+	.zones-items {
+		font-size: 2.6rem;
+	}
+
+	.partners {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: 15px;
+		justify-content: center;
+	}
+	.gym-title {
+		font-size: 9rem;
+	}
+	.gym-rules {
+		height: 600px;
+	}
+
+	.text-title {
+		font-size: 7rem;
+	}
+}
